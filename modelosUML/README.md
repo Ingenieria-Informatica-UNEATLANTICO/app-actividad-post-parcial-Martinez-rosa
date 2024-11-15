@@ -5,7 +5,8 @@ Este modelo de dominio representa un sistema de transporte público, incluyendo 
 
 ## Diagramas
 
-![Diagrama de Clases](images/DiagramaDeClases.png)
+### Diagrama de Clases
+![](images/DiagramaDeClases.png)
 
 - Representa las entidades principales del sistema y sus relaciones.
 - `SistemaDeTransportePublico` es la clase principal que incluye sistemas de pago, tarifas, flotas, planificación de rutas y gestión de incidencias.
@@ -13,7 +14,8 @@ Este modelo de dominio representa un sistema de transporte público, incluyendo 
 - `SistemaDePago` incluye diferentes `TiposDeAbono` y `MetodosDePago`.
 - `GestionDeIncidencias` se encarga de registrar `Incidencias`, las cuales pueden derivar en necesidades de `Mantenimiento`.
 
-![Diagrama de Objetos](images/DiagramaDeObjetos.png)
+### Diagrama de Objetos
+![](images/DiagramaDeObjetos.png)
 
 - Proporciona un ejemplo de una instancia del sistema con datos específicos.
 - `Vehiculo1` es un autobús conducido por `Conductor1` y transporta a `Pasajero1` en `Ruta1` con paradas y horarios específicos.
@@ -21,6 +23,7 @@ Este modelo de dominio representa un sistema de transporte público, incluyendo 
 - `Incidencia1` representa un evento que afecta el trayecto del vehículo.
 
 ### Diagrama de Estados
+![](images/DiagramaDeEstados.png)
 
 - Muestra el flujo de estados de un pasajero durante el trayecto.
 - Desde que el pasajero aborda el vehículo hasta que se baja en la parada deseada.
