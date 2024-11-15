@@ -1,0 +1,79 @@
+@startuml
+
+class SistemaDeTransportePublico {
+}
+
+class SistemaDePago {
+}
+
+class TipoDeAbono {
+}
+
+class MetodoDePago {
+}
+
+class Tarifa {
+}
+
+class Flota {
+}
+
+class Conductor {
+}
+
+class Vehiculo {
+}
+
+class Pasajero {
+}
+
+class Ruta {
+}
+
+class Parada {
+}
+
+class Horario {
+}
+
+class PlanificacionDeRuta {
+}
+
+class GestionDeIncidencias {
+}
+
+class Incidencia {
+}
+
+class Mantenimiento {
+}
+
+SistemaDeTransportePublico "1" --> "1" SistemaDePago : utiliza
+SistemaDeTransportePublico "1" --> "1..*" Tarifa : tiene
+SistemaDeTransportePublico "1" --> "1" Flota : tiene
+SistemaDeTransportePublico "1" --> "1..*" PlanificacionDeRuta : incluye
+SistemaDeTransportePublico "1" --> "1" GestionDeIncidencias : gestiona
+
+SistemaDePago "1" --> "0..*" TipoDeAbono
+TipoDeAbono "1" --> "1" MetodoDePago : utiliza
+
+Flota "1" --> "1..*" Conductor : asigna
+Flota "1" --> "1..*" Vehiculo : contiene
+
+Vehiculo "1" --> "0..*" Pasajero : transporta
+Vehiculo "1" --> "1" Ruta : sigue
+
+Ruta "1" --> "1..*" Parada : incluye
+Ruta "1" --> "1..*" Horario : tiene
+
+PlanificacionDeRuta "1" --> "1..*" Ruta : organiza
+
+GestionDeIncidencias "1" --> "0..*" Incidencia : registra
+Incidencia "0..*" --> "0..1" Mantenimiento : puede requerir
+
+Tarifa "1" --> "1" MetodoDePago : se realiza por
+Pasajero "1" --> "1" Tarifa : paga
+
+Parada "1..*" --> "1" Ruta : pertenece a
+
+@enduml

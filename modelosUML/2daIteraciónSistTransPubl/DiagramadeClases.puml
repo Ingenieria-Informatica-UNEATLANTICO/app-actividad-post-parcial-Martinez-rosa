@@ -1,0 +1,63 @@
+@startuml
+
+class ServicioDeTransportePublico {
+}
+
+class SistemaDePago {
+}
+
+class TipoDeAbono {
+}
+
+class MetodoDePago {
+}
+
+class Tarifa {
+}
+
+class Flota {
+}
+
+class Conductor {
+}
+
+class Vehiculo {
+}
+
+class Pasajero {
+}
+
+class Rutas {
+}
+
+class Horarios {
+}
+
+class GestionDeIncidencias {
+}
+
+class Incidencias {
+}
+
+ServicioDeTransportePublico --> SistemaDePago : tiene
+ServicioDeTransportePublico --> Flota : tiene
+ServicioDeTransportePublico --> GestionDeIncidencias : tiene
+
+SistemaDePago --> TipoDeAbono
+TipoDeAbono --> MetodoDePago
+SistemaDePago --> Tarifa
+
+Flota --> Vehiculo : esta compuesta por
+
+Vehiculo --> Pasajero : contienen
+Vehiculo --> Conductor : es conducido por 
+Vehiculo --> Horarios : transitan en 
+
+
+
+Rutas --> Vehiculo : transitan por
+Rutas --> Horarios : tienen
+
+GestionDeIncidencias --> Incidencias : tiene 
+
+@enduml

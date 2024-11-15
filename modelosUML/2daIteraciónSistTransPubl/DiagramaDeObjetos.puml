@@ -1,0 +1,48 @@
+@startuml
+
+object Vehiculo {
+  Tipo = "Bus"
+}
+
+object Conductor_1 {
+  nombre = "Manuel Masias"
+}
+
+object Pasajero_1 {
+  nombre = "Marco Martinez"
+}
+
+object Ruta_1 {
+}
+
+object Horario {
+}
+
+object Tarifa {
+  precio = "1.00€"
+}
+
+object ParadaFisica {
+  nombre = "Tetuan"
+}
+
+object MetodoDePago {
+  Tipo = "Efectivo"
+}
+
+Vehiculo --> Conductor_1 : es conducido
+Vehiculo --> Pasajero_1 : contiene
+Vehiculo --> Ruta_1 : pasa por
+Vehiculo --> ParadaFisica : se detiene en 
+
+
+
+Conductor_1 --> Horario : conduce en
+
+
+Pasajero_1 --> Tarifa : paga
+Pasajero_1 --> ParadaFisica : se baja
+
+Tarifa --> MetodoDePago : en
+
+@enduml

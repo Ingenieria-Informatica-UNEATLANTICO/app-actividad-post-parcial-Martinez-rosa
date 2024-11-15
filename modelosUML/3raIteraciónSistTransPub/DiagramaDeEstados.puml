@@ -1,0 +1,24 @@
+@startuml
+[*] --> Abordando : El pasajero aborda el vehículo.
+
+Abordando --> EnTransito : El pasajero toma asiento y comienza el trayecto.
+EnTransito : Pasajero en tránsito en la ruta.
+
+EnTransito --> PagoTarifa : El pasajero realiza el pago de la tarifa.
+PagoTarifa : Pago completado con éxito.
+
+PagoTarifa --> Continuando : El pasajero continúa el viaje.
+
+Continuando --> Parada : El vehículo llega a una parada específica.
+Parada : Parada alcanzada.
+
+Parada --> Bajando : Pasajero se dispone a bajar.
+
+Bajando --> [*] : Pasajero desciende y termina el trayecto.
+
+EnTransito --> Incidencia : Ocurre una incidencia en el trayecto.
+Incidencia : Incidencia registrada, el trayecto puede demorarse.
+
+Incidencia --> Continuando : Se retoma el viaje.
+
+@enduml
